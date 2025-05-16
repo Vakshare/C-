@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+void wypisz_napis(const char* napis);
 int main(){
     int mana = 250;
     int* pointer_mana = &mana;
@@ -22,12 +22,21 @@ int main(){
     cout << "Suma tabeli: " << suma << endl;
 
     char tekst[] = "Progragmowanie";
-    int dlugosc_tablicy = sizeof(tekst)/sizeof(tekst[0]);
+    
     char* ptr_char = tekst;
     while (*ptr_char != '\0'){
-        cout<< *ptr_char << " ";
+        cout << *ptr_char << " ";
         ptr_char++;
     }
+    int dlugosc_tablicy = sizeof(tekst)/sizeof(tekst[0])-1;
     cout << endl << "Dlugość tablicy: " << dlugosc_tablicy << endl;
-
+    wypisz_napis("Programowanie");
+    return 0;
 }
+void wypisz_napis(const char* napis){
+    const char* znak = napis;
+    while (*znak != '\0'){
+        cout << *znak << endl;
+        znak++;
+    }
+    }
